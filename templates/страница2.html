@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+          crossorigin="anonymous">
+    <title>{{ name }}</title>
+</head>
+<body>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" href="http://127.0.0.1:8000/main_menu">главное меню</a>
+    </li>
+    {% if current_user.is_authenticated %}
+        <li>
+            <a class="nav-link" href="http://127.0.0.1:8000/logout">{{ current_user.name }}</a>
+        </li>
+    {% endif %}
+</ul>
+<div class="container">
+    <div class="alert alert-success" role="alert" align="center"><h3>{{ name }}</h3></div>
+    <img src="https://static-maps.yandex.ru/1.x/?ll=73.358909,54.961429&size=450,450&z=13&l=map&pt=73.366948,54.990103,pm2blm">
+    <h2>
+        <a href="https://yandex.ru/maps/66/omsk/?ll=73.369825%2C54.957717&mode=poi&poi%5Bpoint%5D=73.358878%2C54.961401&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D29192140099&z=14">Открыть на карте</a>
+    </h2>
+    <h3>Парк города Омска, расположенный на Левобережье Иртыша рядом с Ленинградским мостом и через дорогу от природного парка «Птичья гавань».
+        С февраля 2015 года имеет статус особо охраняемой природной территории местного значения.
+        Площадь парка вместе с Кировским островом составляет 268 га.
+        Значительную её часть занимает единый зелёный массив,
+        также имеется комплекс памятников, включая Вечный огонь и памятник «Мать-сибирячка».</h3>
+</div>
+</body>
+</html>

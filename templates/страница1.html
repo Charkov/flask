@@ -14,10 +14,22 @@
     <li class="nav-item">
         <a class="nav-link active" href="http://127.0.0.1:8000/main_menu">главное меню</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="http://127.0.0.1:8000/second_page">для проверки</a>
-    </li>
+    {% if current_user.is_authenticated %}
+        <li>
+            <a class="nav-link" href="http://127.0.0.1:8000/logout">{{ current_user.name }}</a>
+        </li>
+    {% endif %}
 </ul>
-<div class="alert alert-success" role="alert">тут работает</div>
+<div class="container">
+    <div class="alert alert-success" role="alert" align="center"><h3>{{ name }}</h3></div>
+    <img src="https://static-maps.yandex.ru/1.x/?ll=73.366948,54.990103&size=450,450&z=15&l=map&pt=73.366948,54.990103,pm2blm">
+    <h2>
+        <a href="https://yandex.ru/maps/66/omsk/house/internatsionalnaya_ulitsa_12/Y0oYdQFmT0EOQFtufXV4cX1lZw==/?ll=73.370573%2C54.988145&z=15.48">Открыть на карте</a>
+    </h2>
+    <h3>Православный храм в Омске, находящийся в самом центре города на Соборной площади.
+        Кафедральный собор Омской митрополии РПЦ. Во время гражданской войны был главным храмом Белой России.
+        Был разрушен во времена советской власти и восстановлен в начале XXI века на средства, собранные горожанами.
+        Достопримечательность Омска.</h3>
+</div>
 </body>
 </html>
