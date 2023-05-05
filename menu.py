@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, redirect
 from data import db_session
 from data.users import User
@@ -86,4 +88,6 @@ def logout():
 
 if __name__ == "__main__":
     db_session.global_init("db/blogs.sqlite")
-    app.run(port=8000, host='127.0.0.1')
+#    app.run(port=8000, host='127.0.0.1')
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host='0.0.0.0', port=port)

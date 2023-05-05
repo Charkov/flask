@@ -12,11 +12,11 @@
 <body>
 <ul class="nav justify-content-center">
     <li class="nav-item">
-        <a class="nav-link active" href="http://127.0.0.1:8000/main_menu">главное меню</a>
+        <a class="nav-link active" href="/main_menu">главное меню</a>
     </li>
     {% if current_user.is_authenticated %}
         <li>
-            <a class="nav-link" href="http://127.0.0.1:8000/logout">{{ current_user.name }}</a>
+            <a class="nav-link" href="/logout">{{ current_user.name }}</a>
         </li>
     {% else %}
     {% endif %}
